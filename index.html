@@ -6,27 +6,34 @@
     <script type="text/javascript" src="js/d3.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="js/p5.js" type="text/javascript"></script>
-     <script src="js/p5.sound.js" type="text/javascript"></script>
      <script src="js/p5.dom.js" type="text/javascript"></script>
-     <script src="js/sketchP.js"></script>
+     <script src="js/sketchP5.js"></script>
+     
 
 </head>
 
 <body>
+        
 <div class="navigation">
         <div class="nav--icon">
             <span></span>
             <span></span>
             <span></span>
         </div>
-        <div class="overlay overlay-height">
+        <div class="overlay overlay-fade">
             <ul>
-                <li style="font-size: 20pt;">About</li>
-                <li style="font-size: 11pt; font-weight: thin; padding-bottom: 5pt;">This is a weather Searching experimental website made by Yalan, Wen from school of visual arts. 
-                    Using p5.js to demonstrate the weather icons. Have fun!
+                <li style="font-size: 28pt;">About</li>
+                <li style="font-size: 11pt; font-weight: thin; padding-bottom: 5pt;line-height: 30px;">This is a weather Searching experimental website made by Yalan, Wen from school of visual arts. 
+                    Using p5.js to demonstrate the weather icons. <br>Have fun!
                 </li>
+                <li style="font-size: 12pt;line-height: 32px;">
+                    HOW TO INTERACT<br>
+                    <strong>。Weather Map:</strong> Click Icons to See Details.<br>
+                    <strong>。Ring:</strong> Type City's Name to See Data Visualization.<br>
+                    <strong>。Fan:</strong>  Type City's Name to See Data Visualization.
+                </li>
+                <li>Other Art Works: <a style="font-size: 11pt;" href="yalanwen.com">http://yalanwen.com</a></li>
                 <div class="social">
-
                 </div>
             </ul>
         </div>
@@ -36,13 +43,21 @@
   <p>?</p>
   </div>
 </div>
-<div class="search-page">
-<a href='map.html' class="button"></a>
-
+<div class="dropdown">
+<a herf='#' class="button"></a>
+                    <ul class="dropdown-content">
+                            <li><a href='map.html'>Weather Map</a></li>
+                            <li><a href='index2.html'>Ring</a></li>
+                            <li><a href='index.html'>Fan</a></li>
+                    </ul> 
 </div>
+   
 <div class="search-bar">
 <div class="search-bar2">
-<input id='city' placeholder="New York"/> <button id="submit">Go</button>
+        <label class="search" for="inpt_search">
+<input id='city' placeholder="Type A City"/> 
+        </label>
+        <button id="submit">&#8594;</button>
 </div>
 </div>
 
@@ -53,8 +68,27 @@
         $(this).toggleClass('button-open');
         $('.rect').toggleClass('open');
     });
-    </script>
-    
+</script>
+
+<script>
+// Get the input field
+var input = document.getElementById("city");
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("submit").click();
+  }
+});
+</script>
+
+<footer style="mix-blend-mode: hue; font-size:7px; color:rgba(0, 0, 0, 0.9); position:fixed; bottom:2vh; right:3vw;">
+    © Copyright 2019,Yalan Wen, All Rights Reserved
+</footer>   
 </body>
 
 </html>
