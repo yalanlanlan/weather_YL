@@ -21,6 +21,7 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     var button = select('#submit');
     button.mousePressed(weatherAsk);
+    
 
     input = select('#city');
 
@@ -33,6 +34,12 @@ function setup() {
 
 	positionX[0] = 0;
 	positionY[0] = 0;
+}
+function keyPressed(){
+  if (keyCode === ENTER) {
+    input = select('#city');
+    weatherAsk();
+  } 
 }
 function weatherAsk(){
     var url=  api+input.value()+apiKey+units;

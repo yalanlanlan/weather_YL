@@ -33,4 +33,3 @@ $('.button').on('click', function(){
     $(this).toggleClass('button-open');
     $('.search-bar2').toggleClass('open');
   });
-
